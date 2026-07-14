@@ -1,0 +1,19 @@
+/* VitePress 自定义样式 */
+
+/* 让首页 hero 更紧凑 */
+.VPHero .name,
+.VPHero .text {
+  background: linear-gradient(120deg, #2c3e50 30%, #3498db 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 暗色主题用另一套配色 */
+.dark .VPHero .name,
+.dark .VPHero .text {
+  background: linear-gradient(120deg, #74b9ff 30%, #a29bfe 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

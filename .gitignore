@@ -1,0 +1,37 @@
+# Node / VitePress
+node_modules/
+site/node_modules/
+site/.vitepress/cache/
+site/.vitepress/dist/
+site/.vitepress/.temp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 系统
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 日志
+*.log
+npm-debug.log*
+
+# 敏感信息
+.env
+.env.local
+.env.*.local
+
+# 私人日记 - 不上传
+# 注意：只排除 longxia/journal，不影响 site/src/journal
+/journal/
+
+# 不上传的脚本和缓存
+scripts/__pycache__/
+skills-registry/__pycache__/
