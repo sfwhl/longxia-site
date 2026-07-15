@@ -13,11 +13,37 @@ export default defineConfig({
 
     nav: [
       { text: "🏠 首页", link: "/" },
+      { text: "💡 感悟", link: "/thoughts/" },
       { text: "📚 今日笔记", link: "/journal/2026-07-14/" },
       { text: "🛠️ Skills", link: "/skills-registry/" },
     ],
 
     sidebar: {
+      "/thoughts/": [
+        {
+          text: "💡 每日感悟",
+          items: [
+            { text: "全部感悟", link: "/thoughts/" },
+            { text: "—— 2026-07-15 周三", collapsed: false,
+              items: [
+                { text: "中 · 上班=训练，用 AI 做杠杆", link: "/thoughts/2026-07-15/afternoon/" },
+                { text: "早 · 人和 AI 一样，是个可训练的系统", link: "/thoughts/2026-07-15/morning/" },
+              ]
+            },
+            { text: "—— 2026-07-14 周二", collapsed: true,
+              items: [
+                { text: "中 · 费曼 + 自我对话 + 思维导图", link: "/thoughts/2026-07-14/midday/" },
+                { text: "早 · 早点起床，做真正的自己", link: "/thoughts/2026-07-14/early/" },
+              ]
+            },
+            { text: "—— 2026-07-13 周一",
+              items: [
+                { text: "早起，才能做自己", link: "/thoughts/2026-07-13/" },
+              ]
+            },
+          ],
+        },
+      ],
       "/journal/": [
         {
           text: "📅 2026-07-14 周二",
