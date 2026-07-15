@@ -128,6 +128,23 @@ def extract_existing_reasons(readme_text: str) -> dict[str, str]:
     return reasons
 
 
+def extract_candidate_section(readme_path: Path) -> str:
+    """从现有 README.md 里提取「待评估候选」区块"""
+    if not readme_path.exists():
+        return ""
+    text = readme_path.read_text(encoding="utf-8")
+    # 提取 ## 💡 待评估候选 区块到下一个 ## 之前
+    import re
+    m = re.search(
+        r"## 💡 待评估候选.*?(?=\n## |\Z)",
+        text,
+        re.DOTALL
+    )
+    if m:
+        return m.group().rstrip()
+    return ""
+
+
 def auto_suggest_reason(slug: str, name: str) -> str:
     """根据 slug/name 推断安装原因（启发式）"""
     heuristics = [
@@ -197,6 +214,13 @@ def generate_full_readme(skills: list[dict], existing_reasons: dict[str, str], f
     L.append("")
     L.append("---")
     L.append("")
+
+    # 候选（保留手动内容）
+    candidate_section = extract_candidate_section(README)
+    if candidate_section:
+        L.append(candidate_section)
+        L.append("---")
+        L.append("")
 
     # 概览
     L.append("## 📊 概览")

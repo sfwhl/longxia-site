@@ -1,30 +1,31 @@
 # 🛠️ 小龙的个人 Skill 技能库
 
 > 本仓库记录我（小龙）安装到 Hermes Agent 的所有 skills，作为个人 Skill 技能库的种子数据。
-> 最后更新：2026-07-14 09:08:22 · 共 **21** 个 skills（另含 1 个备份）
+> 最后更新：2026-07-15 10:42:30 · 共 **25** 个 skills（另含 1 个备份）
 
 ---
+
 
 ## 📊 概览
 
 | 一级分类 | 数量 |
 |----------|------|
-| `software-development` | 8 |
-| `general` | 4 |
+| `software-development` | 9 |
+| `general` | 7 |
 | `productivity` | 4 |
 | `creative` | 2 |
 | `autonomous-ai-agents` | 1 |
 | `research` | 1 |
 | `github` | 1 |
-| **总计** | **21** |
+| **总计** | **25** |
 
 ### 🆕 最近安装
 
-- **2026-07-14** — `weread-skills-official` (wechat-reading)
-- **2026-07-14** — `api-key-safety-probe` (api-key-safety-probe)
-- **2026-07-09** — `find-skill-skillhub` (find-skill-skillhub)
-- **2026-07-09** — `dogfood` (dogfood)
-- **2026-07-09** — `hermes-agent` (hermes-agent)
+- **2026-07-15** — `superpowers-skill` (superpowers)
+- **2026-07-15** — `anysearch` (anysearch)
+- **2026-07-15** — `personal-site-vitepress-deploy` (personal-site-vitepress-deploy)
+- **2026-07-15** — `writing-expert-team-pro-sl` (writing-expert-team)
+- **2026-07-15** — `weread-skills-official` (wechat-reading)
 
 > 💡 **关于「安装原因」**：首次生成时我帮你自动推断一条（基于 skill 名称/功能），
 > 其它需要你手动补充。你可以直接编辑这个 Markdown 文件，
@@ -34,6 +35,86 @@
 
 ## 📝 全部 Skills（含安装原因）
 
+### 📦 superpowers
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `superpowers-skill` |
+| **显示名** | superpowers |
+| **版本** | ? |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-15 10:42:20 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/superpowers-skill` |
+| **文件数** | 4 |
+| **大小** | 14,063 字节 (13.7 KB) |
+| **来源** | bundled |
+
+**简介**：A complete software development methodology and skill composition system, ported from obra/superpowers. Provides structured, repeatable workflow: brainstorming, design, planning, TDD, subagent-driven dev, code review, finishing branch. Use for coding, building projects, refactoring, bug fixing, or any programming tasks.
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 anysearch
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `anysearch` |
+| **显示名** | anysearch |
+| **版本** | 2.1.0 |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-15 10:38:18 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/anysearch` |
+| **文件数** | 10 |
+| **大小** | 85,700 字节 (83.7 KB) |
+| **来源** | bundled |
+
+**简介**：Real-time search engine supporting web search, vertical domain search, parallel batch search, and URL content extraction.
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 personal-site-vitepress-deploy
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `personal-site-vitepress-deploy` |
+| **显示名** | personal-site-vitepress-deploy |
+| **版本** | ? |
+| **一级分类** | `software-development` |
+| **安装日期** | 2026-07-15 10:37:21 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/personal-site-vitepress-deploy` |
+| **文件数** | 6 |
+| **大小** | 45,405 字节 (44.3 KB) |
+| **来源** | bundled |
+
+**简介**：用 VitePress 搭个人博客 / 知识库 / Skill 技能库的轻量级静态站，覆盖本地开发、主题定制（Layout slot、busuanzi 阅读量）、内容同步（rsync vs symlink 决策）、一键部署到 Vercel。触发：用户要把个人 Markdown / 笔记 / Skill 清单做成可访问的网站，且偏好"轻量级、可定制、无后端"。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 writing-expert-team
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `writing-expert-team-pro-sl` |
+| **显示名** | writing-expert-team |
+| **版本** | 1.1.0 |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-15 09:10:39 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/writing-expert-team-pro-sl` |
+| **文件数** | 20 |
+| **大小** | 117,024 字节 (114.3 KB) |
+| **来源** | bundled |
+
+**简介**：写作全流程助手：把模糊想法、零散素材、已有文本、用户授权知识库、读书笔记或公开资料，转化为结构清晰、观点鲜明、风格统一、事实可靠、适合发布的高质量内容。适用于选题策划、大纲设计、初稿写作、文章润色、个人风格参考、素材变文章、标题优化、事实核查、多平台改写、管理者表达、商业写作和个人品牌内容创作。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
 ### 📦 wechat-reading
 
 | 字段 | 值 |
@@ -42,10 +123,10 @@
 | **显示名** | wechat-reading |
 | **版本** | 1.0.4 |
 | **一级分类** | `general` |
-| **安装日期** | 2026-07-14 09:02:45 |
+| **安装日期** | 2026-07-15 09:05:50 |
 | **本地路径** | `/home/ubuntu/.hermes/skills/weread-skills-official` |
-| **文件数** | 10 |
-| **大小** | 66,429 字节 (64.9 KB) |
+| **文件数** | 12 |
+| **大小** | 79,673 字节 (77.8 KB) |
 | **来源** | bundled |
 
 **简介**：微信读书助手 — 搜索书籍、管理书架、查看笔记划线、浏览书评、阅读统计、发现推荐好书。包含 SkillHub SDK 升级流程、"最近笔记"工作流、Key 陷阱。
@@ -62,10 +143,10 @@
 | **显示名** | api-key-safety-probe |
 | **版本** | 1.0.0 |
 | **一级分类** | `general` |
-| **安装日期** | 2026-07-14 09:01:23 |
+| **安装日期** | 2026-07-15 09:04:57 |
 | **本地路径** | `/home/ubuntu/.hermes/skills/api-key-safety-probe` |
-| **文件数** | 2 |
-| **大小** | 15,672 字节 (15.3 KB) |
+| **文件数** | 3 |
+| **大小** | 27,090 字节 (26.5 KB) |
 | **来源** | bundled |
 
 **简介**：当用户或第三方凭证(API Key、token、cookie)可能要在本机执行外部命令或调用第三方 API 时使用——验证凭证真伪、隔离副作用、应对强制执行压力。包括微信读书 wrk- Key 实测的准一次性陷阱,以及通用外部凭证的安全操作模板。
@@ -483,4 +564,4 @@ python3 ~/.hermes/longxia/skills-registry/generate.py
 
 ---
 
-📅 本次生成：2026-07-14 09:08:22 · 数据源：`~/.hermes/skills/` + `~/.agents/skills/`
+📅 本次生成：2026-07-15 10:42:30 · 数据源：`~/.hermes/skills/` + `~/.agents/skills/`

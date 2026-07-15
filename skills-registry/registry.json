@@ -1,7 +1,46 @@
 {
-  "generated_at": "2026-07-15T09:10:47.785934",
-  "total_count": 24,
+  "generated_at": "2026-07-15T10:42:30.942220",
+  "total_count": 26,
   "skills": [
+    {
+      "slug": "superpowers-skill",
+      "name": "superpowers",
+      "version": "?",
+      "description": "A complete software development methodology and skill composition system, ported from obra/superpowers. Provides structured, repeatable workflow: brainstorming, design, planning, TDD, subagent-driven dev, code review, finishing branch. Use for coding, building projects, refactoring, bug fixing, or any programming tasks.",
+      "category": "general",
+      "install_date": "2026-07-15 10:42:20",
+      "install_date_iso": "2026-07-15T10:42:20.999651",
+      "local_path": "/home/ubuntu/.hermes/skills/superpowers-skill",
+      "file_count": 4,
+      "total_size_bytes": 14063,
+      "source": "bundled"
+    },
+    {
+      "slug": "anysearch",
+      "name": "anysearch",
+      "version": "2.1.0",
+      "description": "Real-time search engine supporting web search, vertical domain search, parallel batch search, and URL content extraction.",
+      "category": "general",
+      "install_date": "2026-07-15 10:38:18",
+      "install_date_iso": "2026-07-15T10:38:18.815743",
+      "local_path": "/home/ubuntu/.hermes/skills/anysearch",
+      "file_count": 10,
+      "total_size_bytes": 85700,
+      "source": "bundled"
+    },
+    {
+      "slug": "personal-site-vitepress-deploy",
+      "name": "personal-site-vitepress-deploy",
+      "version": "?",
+      "description": "用 VitePress 搭个人博客 / 知识库 / Skill 技能库的轻量级静态站，覆盖本地开发、主题定制（Layout slot、busuanzi 阅读量）、内容同步（rsync vs symlink 决策）、一键部署到 Vercel。触发：用户要把个人 Markdown / 笔记 / Skill 清单做成可访问的网站，且偏好\"轻量级、可定制、无后端\"。",
+      "category": "software-development",
+      "install_date": "2026-07-15 10:37:21",
+      "install_date_iso": "2026-07-15T10:37:21.903765",
+      "local_path": "/home/ubuntu/.hermes/skills/software-development/personal-site-vitepress-deploy",
+      "file_count": 6,
+      "total_size_bytes": 45405,
+      "source": "bundled"
+    },
     {
       "slug": "writing-expert-team-pro-sl",
       "name": "writing-expert-team",
@@ -39,19 +78,6 @@
       "local_path": "/home/ubuntu/.hermes/skills/api-key-safety-probe",
       "file_count": 3,
       "total_size_bytes": 27090,
-      "source": "bundled"
-    },
-    {
-      "slug": "personal-site-vitepress-deploy",
-      "name": "personal-site-vitepress-deploy",
-      "version": "?",
-      "description": "用 VitePress 搭个人博客 / 知识库 / Skill 技能库的轻量级静态站，覆盖本地开发、主题定制（Layout slot、busuanzi 阅读量）、内容同步（rsync vs symlink 决策）、一键部署到 Vercel。触发：用户要把个人 Markdown / 笔记 / Skill 清单做成可访问的网站，且偏好\"轻量级、可定制、无后端\"。",
-      "category": "software-development",
-      "install_date": "2026-07-15 09:04:33",
-      "install_date_iso": "2026-07-15T09:04:33.032166",
-      "local_path": "/home/ubuntu/.hermes/skills/software-development/personal-site-vitepress-deploy",
-      "file_count": 4,
-      "total_size_bytes": 21941,
       "source": "bundled"
     },
     {
