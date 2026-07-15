@@ -26,6 +26,7 @@ export default defineConfig({
             { text: "全部感悟", link: "/thoughts/" },
             { text: "—— 2026-07-15 周三", collapsed: false,
               items: [
+                { text: "晚 · 瓶颈转向 Harness（完结篇）", link: "/thoughts/2026-07-15/evening/" },
                 { text: "中 · 上班=训练，用 AI 做杠杆", link: "/thoughts/2026-07-15/afternoon/" },
                 { text: "早 · 人和 AI 一样，是个可训练的系统", link: "/thoughts/2026-07-15/morning/" },
               ]
