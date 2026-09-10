@@ -66,6 +66,6 @@ title: 每日感悟
 
 ## 🔗 相关栏目
 
-- [📚 读书笔记](/journal/2026-07-15/weread-summary-学以致用) — 知识沉淀（今天刚拉的）
-- [🌅 今日工作](/journal/2026-07-15/) — 每天做了什么
-- [🛠️ Skills 技能库](/skills-registry/README) — 你这个 LLM 的工具调用清单
+- [📚 读书笔记](/journal/2026-07-15/weread-summary-xueyizhiyong) — 知识沉淀（今天刚拉的）
+- [🌅 今日工作](/journal/2026-07-15/README) — 每天做了什么
+- [🛠️ Skills 技能库](/skills-registry/) — 你这个 LLM 的工具调用清单
