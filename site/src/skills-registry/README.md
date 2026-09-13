@@ -1,31 +1,60 @@
 # 🛠️ 小龙的个人 Skill 技能库
 
 > 本仓库记录我（小龙）安装到 Hermes Agent 的所有 skills，作为个人 Skill 技能库的种子数据。
-> 最后更新：2026-07-15 10:42:30 · 共 **25** 个 skills（另含 1 个备份）
+> 最后更新：2026-07-31 17:40:08 · 共 **34** 个 skills（另含 1 个备份）
 
 ---
 
+## 💡 待评估候选（只记录未安装）
+
+这些是评估过但暂未安装的 skill，等需要时再装。
+
+### ✅ 已确认（2026-07-17 装上）
+
+- **humanizer-zh** ✅ 已装（33961 下）：去 AI 写作痕迹，让 AI 文像人话
+- **web-access-plus** ✅ 已装（283 下）：Playwright 浏览器自动化（小龙拼作 "playwrite"）
+
+> 注：之前记录的 `cotenttext` 推测作废。实际小龙需求是 playwright（浏览器自动化）。
+
+### 📌 候选（如果确认要"内容提取"方向）
+
+- **公众号内容提取** (2778 下)：从公众号抓文章保存为 Markdown
+- **网页内容提取** (112 下)：网页/公众号/知识平台结构化提取
+- **ima-skills** (105446 下)：笔记/知识库读取写入检索
+
+### 📌 候选（如果确认要"上下文/记忆"方向）
+
+- **跨会话记忆桥** (302 下)：AI 跨会话记住项目进度
+- **记忆使用技能** (2133 下)：解决 AI 记忆混乱（今天讲明天忘）
+- **记忆管家** (1850 下)：多 Agent 上下文监控与记忆管理
+- **Context Overflow Recovery** (140 下)：上下文溢出恢复
+
+---
+---
+---
+---
+---
 
 ## 📊 概览
 
 | 一级分类 | 数量 |
 |----------|------|
-| `software-development` | 9 |
-| `general` | 7 |
+| `general` | 12 |
+| `software-development` | 12 |
 | `productivity` | 4 |
+| `autonomous-ai-agents` | 2 |
 | `creative` | 2 |
-| `autonomous-ai-agents` | 1 |
 | `research` | 1 |
 | `github` | 1 |
-| **总计** | **25** |
+| **总计** | **34** |
 
 ### 🆕 最近安装
 
-- **2026-07-15** — `superpowers-skill` (superpowers)
-- **2026-07-15** — `anysearch` (anysearch)
-- **2026-07-15** — `personal-site-vitepress-deploy` (personal-site-vitepress-deploy)
-- **2026-07-15** — `writing-expert-team-pro-sl` (writing-expert-team)
-- **2026-07-15** — `weread-skills-official` (wechat-reading)
+- **2026-07-31** — `agent-proactive-mode` (agent-proactive-mode)
+- **2026-07-31** — `find-skill-skillhub` (find-skill-skillhub)
+- **2026-07-27** — `web-access-plus` (web-access)
+- **2026-07-25** — `ai-dev-discipline` (ai-dev-discipline)
+- **2026-07-23** — `weread-skills-official` (wechat-reading)
 
 > 💡 **关于「安装原因」**：首次生成时我帮你自动推断一条（基于 skill 名称/功能），
 > 其它需要你手动补充。你可以直接编辑这个 Markdown 文件，
@@ -34,6 +63,286 @@
 ---
 
 ## 📝 全部 Skills（含安装原因）
+
+### 📦 agent-proactive-mode
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `agent-proactive-mode` |
+| **显示名** | agent-proactive-mode |
+| **版本** | ? |
+| **一级分类** | `autonomous-ai-agents` |
+| **安装日期** | 2026-07-31 11:32:09 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/autonomous-ai-agents/agent-proactive-mode` |
+| **文件数** | 8 |
+| **大小** | 46,274 字节 (45.2 KB) |
+| **来源** | bundled |
+
+**简介**：AI 不再被动等指挥的工作模式（小龙 2026-07-17 根本性指令的提炼）。覆盖：主动反思与质疑、5 问清单评估机会、拖延式探索反模式、用户问"心态/工作观"等元问题时的真实回应、与"已成功的同行"对比时不阿谀不顺从、用户要求"AI 一直干活"时的自主执行模式。触发：用户给了工作模式变更指令；用户在表达"停滞/重复/想副业但不知方向"的状态；用户问了关于工作方式/心态/优先级的元问题；AI 自己写完交付物后不知道下一步；用户说"你要一直干活"。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 find-skill-skillhub
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `find-skill-skillhub` |
+| **显示名** | find-skill-skillhub |
+| **版本** | ? |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-31 08:22:41 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/find-skill-skillhub` |
+| **文件数** | 16 |
+| **大小** | 19,644 字节 (19.2 KB) |
+| **来源** | bundled |
+
+**简介**：在 SkillHub 平台查找/搜索 Skill 技能。基于 skills 列表接口，支持关键词分词搜索、一级标签（一级分类）筛选、以及二者组合检索。当用户说『找个 xxx 技能』『有没有处理 PDF 的 skill』『SkillHub 上搜一下 xxx』『按分类看技能』『办公效率类有哪些技能』『推荐一个做数据分析的 skill』『这个需求有现成技能吗』等需要在 SkillHub 上发现/检索/推荐 Skill 的场景时使用本技能。
+
+**🎯 安装原因**： 在 SkillHub 检索 / 发现 skills
+
+---
+
+### 📦 web-access
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `web-access-plus` |
+| **显示名** | web-access |
+| **版本** | ? |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-27 10:39:38 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/web-access-plus` |
+| **文件数** | 16 |
+| **大小** | 104,685 字节 (102.2 KB) |
+| **来源** | bundled |
+
+**简介**：
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 ai-dev-discipline
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `ai-dev-discipline` |
+| **显示名** | ai-dev-discipline |
+| **版本** | ? |
+| **一级分类** | `software-development` |
+| **安装日期** | 2026-07-25 10:15:39 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/ai-dev-discipline` |
+| **文件数** | 4 |
+| **大小** | 25,849 字节 (25.2 KB) |
+| **来源** | bundled |
+
+**简介**：AI 时代的陌生功能开发纪律（小龙 2026-07-23 实战复盘总结）。AI 降低编码成本但不降低方案/模块理解/联调/质量成本。任何涉及陌生功能、陌生模块、新方案、新代码的需求开发任务都必须走 8 步流程（代码理解→需求澄清→方案设计→方案评审→任务拆解→AI 辅助编码→人工审核→验证闭环），并满足 4 个前置门（接触过吗/需求清晰吗/代码理解度/TL 评审了吗）才能进入大规模编码。核心底线：代码可由 AI 生成，但方案必须由人掌控，逻辑必须由人理解，质量必须由人负责。触发：用户说开发/实现/写代码/调研/新功能/新模块/编码/落地 等词；用户描述一个不熟悉的功能；AI 准备给方案但用户没说清需求。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 wechat-reading
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `weread-skills-official` |
+| **显示名** | wechat-reading |
+| **版本** | 1.0.4 |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-23 08:27:01 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/weread-skills-official` |
+| **文件数** | 13 |
+| **大小** | 91,571 字节 (89.4 KB) |
+| **来源** | bundled |
+
+**简介**：微信读书助手 — 搜索书籍、管理书架、查看笔记划线、浏览书评、阅读统计、发现推荐好书。包含 SkillHub SDK 升级流程、"最近笔记"工作流、Key 陷阱。
+
+**🎯 安装原因**： 提取微信读书的划线/笔记/想法，整理成个人知识库
+
+---
+
+### 📦 personal-site-vitepress-deploy
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `personal-site-vitepress-deploy` |
+| **显示名** | personal-site-vitepress-deploy |
+| **版本** | ? |
+| **一级分类** | `software-development` |
+| **安装日期** | 2026-07-23 08:26:01 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/personal-site-vitepress-deploy` |
+| **文件数** | 24 |
+| **大小** | 199,971 字节 (195.3 KB) |
+| **来源** | bundled |
+
+**简介**：用 VitePress 搭个人博客 / 知识库 / Skill 技能库的轻量级静态站，覆盖本地开发、主题定制（Layout slot、强制 dark mode、custom.css 重写 VitePress 变量）、卡片化布局、内容同步（rsync vs symlink 决策）、一键部署到 Vercel 或自建 VPS（Caddy + /var/www/），集成 minimaxi 视觉 API 做截图分析（替代不可用的 browser_vision，模型 `MiniMax-Text-01` + 端点 `/v1/text/chatcompletion_v2`），按 Anthropic frontend-design skill 方法论避 3 种 AI 默认设计（奶白底/荧光黑客/报纸风）。集成 vibe-usage CLI 追踪 token 用量、AI 主动反思机制（不被动等指挥）。触发：用户要把个人 Markdown / 笔记 / Skill 清单做成可访问的网站，且偏好"轻量级、可定制、无后端"；或用户指令 AI 工作模式需要主动反思推进。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 context7-cli
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `context7-cli` |
+| **显示名** | context7-cli |
+| **版本** | ? |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-21 20:01:04 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/context7-cli` |
+| **文件数** | 3 |
+| **大小** | 3,933 字节 (3.8 KB) |
+| **来源** | bundled |
+
+**简介**：Manage Context7 via CLI - search libraries, get documentation context. Use when user mentions 'context7', 'library docs', 'documentation context', or wants to fetch up-to-date library documentation.
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 hermes-desktop-plugins
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `hermes-desktop-plugins` |
+| **显示名** | hermes-desktop-plugins |
+| **版本** | 1.0.0 |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-21 02:35:21 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/hermes-desktop-plugins` |
+| **文件数** | 2 |
+| **大小** | 11,990 字节 (11.7 KB) |
+| **来源** | bundled |
+
+**简介**：Write desktop app plugins that add UI panes and commands.
+
+**🎯 安装原因**： 配置 / 扩展 Hermes Agent
+
+---
+
+### 📦 hermes-agent
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `hermes-agent` |
+| **显示名** | hermes-agent |
+| **版本** | 2.3.0 |
+| **一级分类** | `autonomous-ai-agents` |
+| **安装日期** | 2026-07-21 02:35:21 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/autonomous-ai-agents/hermes-agent` |
+| **文件数** | 3 |
+| **大小** | 71,635 字节 (70.0 KB) |
+| **来源** | bundled |
+
+**简介**：Configure, extend, or contribute to Hermes Agent.
+
+**🎯 安装原因**： 配置 / 扩展 Hermes Agent
+
+---
+
+### 📦 humanizer
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `humanizer` |
+| **显示名** | humanizer |
+| **版本** | 2.5.1 |
+| **一级分类** | `creative` |
+| **安装日期** | 2026-07-21 02:35:21 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/creative/humanizer` |
+| **文件数** | 2 |
+| **大小** | 35,529 字节 (34.7 KB) |
+| **来源** | bundled |
+
+**简介**：Humanize text: strip AI-isms and add real voice.
+
+**🎯 安装原因**： 把 AI 生成的文本改得更像人话，去除 AI 痕迹
+
+---
+
+### 📦 threat-analysis-apcdr
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `threat-analysis-apcdr` |
+| **显示名** | threat-analysis-apcdr |
+| **版本** | ? |
+| **一级分类** | `software-development` |
+| **安装日期** | 2026-07-20 09:12:10 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/threat-analysis-apcdr` |
+| **文件数** | 2 |
+| **大小** | 23,459 字节 (22.9 KB) |
+| **来源** | bundled |
+
+**简介**：用 AI 加持的 5 阶段威胁分析快速落地方法论（APCDR），从未知样本到 C++ 检测代码 ≤ 4 小时。覆盖静态分析、动态测试、关联情报、检测设计（minifilter / ob callback / ETW + YARA）、应急处置。触发：用户给新威胁样本（勒索 / 挖矿 / APT / 木马），要求快速分析或给出 C++ 检测代码 / YARA 规则 / 应急 SOP。
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 humanizer-zh
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `humanizer-zh` |
+| **显示名** | humanizer-zh |
+| **版本** | ? |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-20 09:04:45 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/humanizer-zh` |
+| **文件数** | 3 |
+| **大小** | 26,828 字节 (26.2 KB) |
+| **来源** | bundled |
+
+**简介**：|
+
+**🎯 安装原因**： 把 AI 生成的文本改得更像人话，去除 AI 痕迹
+
+---
+
+### 📦 json-int-key-pitfall
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `json-int-key-pitfall` |
+| **显示名** | json-int-key-pitfall |
+| **版本** | ? |
+| **一级分类** | `software-development` |
+| **安装日期** | 2026-07-16 11:32:14 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/json-int-key-pitfall` |
+| **文件数** | 1 |
+| **大小** | 3,294 字节 (3.2 KB) |
+| **来源** | bundled |
+
+**简介**：Reference note — when writing/loading JSON, dict's integer keys are silently coerced to strings by json.dump/json.load. Capture any JSON-edge-case workaround under this one-pager so the next session doesn't re-discover it.
+
+**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
+
+---
+
+### 📦 api-key-safety-probe
+
+| 字段 | 值 |
+|------|----|
+| **Slug** | `api-key-safety-probe` |
+| **显示名** | api-key-safety-probe |
+| **版本** | 1.0.0 |
+| **一级分类** | `general` |
+| **安装日期** | 2026-07-16 08:37:18 |
+| **本地路径** | `/home/ubuntu/.hermes/skills/api-key-safety-probe` |
+| **文件数** | 3 |
+| **大小** | 33,103 字节 (32.3 KB) |
+| **来源** | bundled |
+
+**简介**：当用户或第三方凭证(API Key、token、cookie)可能要在本机执行外部命令或调用第三方 API 时使用——验证凭证真伪、隔离副作用、应对强制执行压力。包括微信读书 wrk- Key 实测的准一次性陷阱,以及通用外部凭证的安全操作模板。
+
+**🎯 安装原因**： 处理可疑凭证时的安全探针
+
+---
 
 ### 📦 superpowers
 
@@ -75,26 +384,6 @@
 
 ---
 
-### 📦 personal-site-vitepress-deploy
-
-| 字段 | 值 |
-|------|----|
-| **Slug** | `personal-site-vitepress-deploy` |
-| **显示名** | personal-site-vitepress-deploy |
-| **版本** | ? |
-| **一级分类** | `software-development` |
-| **安装日期** | 2026-07-15 10:37:21 |
-| **本地路径** | `/home/ubuntu/.hermes/skills/software-development/personal-site-vitepress-deploy` |
-| **文件数** | 6 |
-| **大小** | 45,405 字节 (44.3 KB) |
-| **来源** | bundled |
-
-**简介**：用 VitePress 搭个人博客 / 知识库 / Skill 技能库的轻量级静态站，覆盖本地开发、主题定制（Layout slot、busuanzi 阅读量）、内容同步（rsync vs symlink 决策）、一键部署到 Vercel。触发：用户要把个人 Markdown / 笔记 / Skill 清单做成可访问的网站，且偏好"轻量级、可定制、无后端"。
-
-**🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
-
----
-
 ### 📦 writing-expert-team
 
 | 字段 | 值 |
@@ -112,46 +401,6 @@
 **简介**：写作全流程助手：把模糊想法、零散素材、已有文本、用户授权知识库、读书笔记或公开资料，转化为结构清晰、观点鲜明、风格统一、事实可靠、适合发布的高质量内容。适用于选题策划、大纲设计、初稿写作、文章润色、个人风格参考、素材变文章、标题优化、事实核查、多平台改写、管理者表达、商业写作和个人品牌内容创作。
 
 **🎯 安装原因**： （待补充：你装这个 skill 是为了做什么？）
-
----
-
-### 📦 wechat-reading
-
-| 字段 | 值 |
-|------|----|
-| **Slug** | `weread-skills-official` |
-| **显示名** | wechat-reading |
-| **版本** | 1.0.4 |
-| **一级分类** | `general` |
-| **安装日期** | 2026-07-15 09:05:50 |
-| **本地路径** | `/home/ubuntu/.hermes/skills/weread-skills-official` |
-| **文件数** | 12 |
-| **大小** | 79,673 字节 (77.8 KB) |
-| **来源** | bundled |
-
-**简介**：微信读书助手 — 搜索书籍、管理书架、查看笔记划线、浏览书评、阅读统计、发现推荐好书。包含 SkillHub SDK 升级流程、"最近笔记"工作流、Key 陷阱。
-
-**🎯 安装原因**： 提取微信读书的划线/笔记/想法，整理成个人知识库
-
----
-
-### 📦 api-key-safety-probe
-
-| 字段 | 值 |
-|------|----|
-| **Slug** | `api-key-safety-probe` |
-| **显示名** | api-key-safety-probe |
-| **版本** | 1.0.0 |
-| **一级分类** | `general` |
-| **安装日期** | 2026-07-15 09:04:57 |
-| **本地路径** | `/home/ubuntu/.hermes/skills/api-key-safety-probe` |
-| **文件数** | 3 |
-| **大小** | 27,090 字节 (26.5 KB) |
-| **来源** | bundled |
-
-**简介**：当用户或第三方凭证(API Key、token、cookie)可能要在本机执行外部命令或调用第三方 API 时使用——验证凭证真伪、隔离副作用、应对强制执行压力。包括微信读书 wrk- Key 实测的准一次性陷阱,以及通用外部凭证的安全操作模板。
-
-**🎯 安装原因**： 处理可疑凭证时的安全探针
 
 ---
 
@@ -192,26 +441,6 @@
 **简介**：Exploratory QA of web apps: find bugs, evidence, reports.
 
 **🎯 安装原因**： 对 web app 做探索性 QA 找 bug
-
----
-
-### 📦 hermes-agent
-
-| 字段 | 值 |
-|------|----|
-| **Slug** | `hermes-agent` |
-| **显示名** | hermes-agent |
-| **版本** | 2.3.0 |
-| **一级分类** | `autonomous-ai-agents` |
-| **安装日期** | 2026-07-09 16:06:49 |
-| **本地路径** | `/home/ubuntu/.hermes/skills/autonomous-ai-agents/hermes-agent` |
-| **文件数** | 3 |
-| **大小** | 70,287 字节 (68.6 KB) |
-| **来源** | bundled |
-
-**简介**：Configure, extend, or contribute to Hermes Agent.
-
-**🎯 安装原因**： 配置 / 扩展 Hermes Agent
 
 ---
 
@@ -292,26 +521,6 @@
 **简介**：Geocode, POIs, routes, timezones via OpenStreetMap/OSRM.
 
 **🎯 安装原因**： 地理编码 / 路径规划 / 时区
-
----
-
-### 📦 humanizer
-
-| 字段 | 值 |
-|------|----|
-| **Slug** | `humanizer` |
-| **显示名** | humanizer |
-| **版本** | 2.5.1 |
-| **一级分类** | `creative` |
-| **安装日期** | 2026-07-09 16:06:49 |
-| **本地路径** | `/home/ubuntu/.hermes/skills/creative/humanizer` |
-| **文件数** | 2 |
-| **大小** | 31,091 字节 (30.4 KB) |
-| **来源** | bundled |
-
-**简介**：Humanize text: strip AI-isms and add real voice.
-
-**🎯 安装原因**： 把 AI 生成的文本改得更像人话，去除 AI 痕迹
 
 ---
 
@@ -564,4 +773,4 @@ python3 ~/.hermes/longxia/skills-registry/generate.py
 
 ---
 
-📅 本次生成：2026-07-15 10:42:30 · 数据源：`~/.hermes/skills/` + `~/.agents/skills/`
+📅 本次生成：2026-07-31 17:40:08 · 数据源：`~/.hermes/skills/` + `~/.agents/skills/`

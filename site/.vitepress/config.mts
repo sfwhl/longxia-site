@@ -11,11 +11,19 @@ export default defineConfig({
   themeConfig: {
     siteTitle: "小龙的小站",
 
+    appearance: 'dark', // 强制暗色（终端美学）
     nav: [
       { text: "🏠 首页", link: "/" },
       { text: "💡 感悟", link: "/thoughts/" },
       { text: "📚 今日笔记", link: "/journal/2026-07-14/" },
-      { text: "🛠️ Skills", link: "/skills-registry/" },
+      { text: "📝 文章", link: "/articles/" },
+      { text: "📖 阅读笔记", link: "/notes/" },
+      { text: "🛠️ Skills 卡片", link: "/skills/" },
+      { text: "📦 新装 Skills", link: "/recent-skills/" },
+      { text: "🗂 完整清单", link: "/skills-registry/" },
+      { text: "🎓 学习", link: "/learning/" },
+      { text: "📋 候选清单", link: "/notes/candidates-index/" },
+      { text: "🎯 方法论", link: "/methodology/" },
     ],
 
     sidebar: {
@@ -42,6 +50,17 @@ export default defineConfig({
                 { text: "早起，才能做自己", link: "/thoughts/2026-07-13/" },
               ]
             },
+          ],
+        },
+      ],
+      "/articles/": [
+        {
+          text: "📝 文章",
+          items: [
+            { text: "全部文章", link: "/articles/" },
+            { text: "2026-09-13 AI 工作流尸检", link: "/articles/2026-09-13-ai-workflow-postmortem" },
+            { text: "2026-07-16 装了 25 个 Skills", link: "/articles/2026-07-16-25-skills" },
+            { text: "2026-07-15 Harness 时代", link: "/articles/2026-07-15-harness-era" },
           ],
         },
       ],

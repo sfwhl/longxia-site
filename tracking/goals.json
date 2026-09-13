@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "owner": "小龙",
+  "created": "2026-07-16",
+  "long_term_goals": [
+    {
+      "id": "threat-analysis-apcdr",
+      "title": "威胁分析快速落地能力（APCDR 方法论）",
+      "why": "产品核心交付——每天面对新样本，AI 加持下 2-4 小时出方案 vs 传统 2-3 天",
+      "success_criteria": "每出现新威胁，4 小时内产出可落地的 C++ 检测代码 + YARA 规则",
+      "started": "2026-07-17",
+      "current_progress": "方法论已建，待应用 sorry 样本",
+      "is_primary": true
+    },
+    {
+      "id": "go-driver-mastery",
+      "title": "Go + Windows 驱动 + 逆向 转型",
+      "why": "产品重构后必备技能，深度掌握才能不掉队",
+      "success_criteria": "30 课全部学完 + 能独立写 ETW consumer + 能维护现有驱动",
+      "started": "2026-07-16",
+      "current_progress": "第 1 课，已暂停日更承诺（改为按需学习）",
+      "note": "**降级为按需**——与核心工作并行，工作中用到再学，不设每日打卡"
+    },
+    {
+      "id": "ai-workflow",
+      "title": "AI 工作流实战",
+      "why": "用 AI 做杠杆，长期提效",
+      "success_criteria": "每天用 Skills 串成工作流，每天减少 1 小时重复工作",
+      "started": "2026-07-15",
+      "current_progress": "25 skills 装好，daily-deploy.sh 已就位",
+      "note": "**核心：APCDR 方法论（AI 加持的威胁分析）**"
+    },
+    {
+      "id": "public-output",
+      "title": "公众号 / 内容输出",
+      "why": "建立个人品牌，半年内稳定输出",
+      "success_criteria": "每周 1 篇高质量文章 + 每月 1 篇总结",
+      "started": "2026-07-15",
+      "current_progress": "3 篇已上站（含 09-13 AI 工作流尸检）· 分发流水线 v2.0 就位（掘金/CSDN/博客园/知乎/头条/小红书）· 公众号已停用"
+    },
+    {
+      "id": "personal-os",
+      "title": "个人 OS（主动权 + 真实 + 自我成长）",
+      "why": "长期方向：成为能持续进化的人",
+      "success_criteria": "每天 5 问自检 + 每周周复盘 + 每月里程碑回顾",
+      "started": "2026-07-13",
+      "current_progress": "6 条感悟已记录，daily.sh 已就位"
+    }
+  ],
+  "commitments": [
+    {
+      "id": "go-lesson-01",
+      "title": "Go 基础语法（C++ 视角）",
+      "promised_at": "2026-07-16",
+      "deadline": "2026-07-17",
+      "status": "paused",
+      "evidence": "58 天未动，2026-09-13 正式降级为『工作中用到就学』，不再每日催促",
+      "note": "撤销『每天 30 分钟』承诺——不代表放弃 Go，是撤掉不可持续的日更要求"
+    },
+    {
+      "id": "vibe-usage-install",
+      "title": "安装 vibe-usage 追踪 AI 用量",
+      "promised_at": "2026-07-16",
+      "deadline": "2026-07-16",
+      "status": "completed",
+      "evidence": "已同步 2 sessions / 1107 messages / daemon 安装"
+    },
+    {
+      "id": "website-redesign",
+      "title": "网站用 frontend-design skill 升级",
+      "promised_at": "2026-07-16",
+      "deadline": "2026-07-16",
+      "status": "completed",
+      "evidence": "终端机美学（深炭黑+琥珀黄），minimaxi 视觉验证通过"
+    },
+    {
+      "id": "sorry-ransomware-analysis",
+      "title": "sorry 勒索家族样本分析（攻击手法 + 检测 + 处置）",
+      "promised_at": "2026-07-17",
+      "deadline": "2026-07-17",
+      "status": "paused",
+      "evidence": "超期 57 天未动，2026-09-13 降级——不再作为承诺，改为『有真实样本时按 APCDR 走』",
+      "priority": "P0",
+      "is_core_work": true
+    }
+  ],
+  "promises_kept_count": 0,
+  "promises_broken_count": 0,
+  "notes": [
+    "2026-09-13: 关闭 Go/sorry 两个死承诺（改 paused），建立输出台账 notes/output-tracker.md，确立『每周≥1次输出 + 没链接=没完成』纪律"
+  ]
+}

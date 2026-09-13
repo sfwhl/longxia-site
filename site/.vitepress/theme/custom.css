@@ -1,19 +1,1050 @@
-/* VitePress 自定义样式 */
+/* ============================================
+   小龙的小站 - 终端机美学自定义主题
+   Anthropic frontend-design skill 指导:
+   - 避开 3 种 AI 默认（奶白/酸荧光/报纸风）
+   - 有 thesis（设计主张）
+   - 有 signature element
+   - 字体配对刻意
+   ============================================ */
 
-/* 让首页 hero 更紧凑 */
-.VPHero .name,
-.VPHero .text {
-  background: linear-gradient(120deg, #2c3e50 30%, #3498db 70%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* === 字体 === */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap');
+
+/* === CSS 变量：设计 token === */
+:root {
+  /* 配色 - 终端机美学 */
+  --bg-void: #0E0E12;        /* 主背景 - CRT 屏幕休眠色 */
+  --bg-panel: #15151B;       /* 卡片背景 - 比主背景略亮 */
+  --bg-elevated: #1C1C24;     /* 高亮背景 */
+  --border-dim: #2A2A35;     /* 暗淡边框 */
+  --border-bright: #3D3D4A;  /* 亮边框 */
+  
+  /* 文本色 */
+  --text-primary: #E8E6E0;    /* 暖白主文本 */
+  --text-secondary: #A8A6A0;  /* 次文本 */
+  --text-muted: #6B6B70;      /* 静默文本 */
+  
+  /* 强调色 - 琥珀黄（CRT 终端机） */
+  --accent-amber: #FFB000;     /* 主强调 - 琥珀黄 */
+  --accent-amber-dim: #B37D00; /* 暗琥珀 */
+  --accent-amber-glow: rgba(255, 176, 0, 0.15);
+  
+  /* 数据色 - 钴蓝（数据/统计） */
+  --data-blue: #1A4FCC;
+  --data-blue-glow: rgba(26, 79, 204, 0.15);
+  
+  /* 状态色 */
+  --status-ok: #4ADE80;       /* 绿 - 完成/通过 */
+  --status-warn: #FCD34D;     /* 黄 - 警告 */
+  --status-err: #EF4444;      /* 红 - 错误 */
+  
+  /* 字体 */
+  --font-display: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  --font-body: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  --font-serif: 'IBM Plex Serif', Georgia, serif;
+  --font-code: 'JetBrains Mono', 'Courier New', monospace;
+  
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  
+  /* 圆角 - 故意很小，保留终端方块感 */
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  
+  /* 阴影 - 模拟 CRT 屏幕的微光 */
+  --shadow-amber: 0 0 24px rgba(255, 176, 0, 0.08);
+  --shadow-deep: 0 4px 24px rgba(0, 0, 0, 0.4);
+  
+  /* 过渡 */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration: 200ms;
+}
+<style>
+/* === 全局重置：强制暗色（终端美学） === */
+html {
+  background: var(--bg-void) !important;
+  color: var(--text-primary) !important;
 }
 
-/* 暗色主题用另一套配色 */
-.dark .VPHero .name,
-.dark .VPHero .text {
-  background: linear-gradient(120deg, #74b9ff 30%, #a29bfe 70%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+html.dark {
+  /* 默认就是暗色 */
+}
+
+html:not(.dark) {
+  /* 即使 light 模式也用暗色 - 强制终端风 */
+  background: var(--bg-void) !important;
+  color: var(--text-primary) !important;
+}
+
+body {
+  background: var(--bg-void) !important;
+  color: var(--text-primary) !important;
+}
+
+/* === 覆盖 VitePress 的所有浅色变量 === */
+:root {
+  --vp-c-bg: #0E0E12;
+  --vp-c-bg-alt: #15151B;
+  --vp-c-bg-soft: #15151B;
+  --vp-c-bg-elv: #1C1C24;
+  --vp-c-text-1: #E8E6E0;
+  --vp-c-text-2: #A8A6A0;
+  --vp-c-text-3: #6B6B70;
+  --vp-c-divider: #2A2A35;
+  --vp-c-gutter: #2A2A35;
+  --vp-c-border: #3D3D4A;
+}
+
+/* === Signature Element: ASCII 装饰 === */
+.ascii-decoration {
+  font-family: var(--font-display);
+  color: var(--accent-amber);
+  font-size: 14px;
+  letter-spacing: 0;
+  user-select: none;
+  white-space: pre;
+  opacity: 0.7;
+}
+
+/* 在内容前后加 ASCII 分隔 */
+.with-ascii-divider::before {
+  content: "┌─ ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ─┐";
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent-amber);
+  font-size: 14px;
+  opacity: 0.5;
+  margin: var(--space-5) 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.with-ascii-divider::after {
+  content: "└─ ── ── ── ── ── ── ── ── ── ── ── ── ── ── ── ─┘";
+  display: block;
+  font-family: var(--font-display);
+  color: var(--accent-amber);
+  font-size: 14px;
+  opacity: 0.5;
+  margin: var(--space-5) 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* === 链接 === */
+a {
+  color: var(--accent-amber);
+  text-decoration: none;
+  border-bottom: 1px dotted transparent;
+  transition: border-color var(--duration) var(--ease);
+}
+
+a:hover {
+  border-bottom-color: var(--accent-amber);
+  text-shadow: 0 0 8px var(--accent-amber-glow);
+}
+
+/* === 标题 === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-top: 1px solid var(--border-dim);
+  padding-top: var(--space-4);
+  margin-top: var(--space-6);
+}
+
+h2::before {
+  content: "## ";
+  color: var(--accent-amber);
+  font-weight: 700;
+  margin-right: 4px;
+  opacity: 0.8;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--accent-amber);
+}
+
+h3::before {
+  content: "### ";
+  color: var(--accent-amber);
+  opacity: 0.6;
+  margin-right: 4px;
+}
+
+/* === 段落 / 文字 === */
+p {
+  margin: var(--space-3) 0;
+  color: var(--text-primary);
+}
+
+strong, b {
+  color: var(--accent-amber);
+  font-weight: 700;
+}
+
+em, i {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+code {
+  font-family: var(--font-code);
+  font-size: 0.9em;
+  background: var(--bg-elevated);
+  color: var(--accent-amber);
+  padding: 2px 6px;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--border-dim);
+}
+
+pre {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-amber);
+  border-radius: var(--radius-2);
+  padding: var(--space-4);
+  overflow-x: auto;
+  box-shadow: var(--shadow-deep);
+}
+
+pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* === 引用 === */
+blockquote {
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--accent-amber);
+  background: var(--bg-panel);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* === 列表 === */
+ul, ol {
+  padding-left: var(--space-5);
+}
+
+li {
+  margin: var(--space-2) 0;
+}
+
+li::marker {
+  color: var(--accent-amber);
+}
+
+/* === 表格 === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-4) 0;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+}
+
+th {
+  background: var(--bg-elevated);
+  color: var(--accent-amber);
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-bright);
+}
+
+td {
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-dim);
+}
+
+tr:hover {
+  background: var(--bg-elevated);
+}
+
+/* === 水平线 === */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+  margin: var(--space-6) 0;
+}
+
+/* === VitePress 布局覆盖 === */
+.VPNavBar {
+  background: var(--bg-panel) !important;
+  border-bottom: 1px solid var(--border-bright) !important;
+  backdrop-filter: blur(8px);
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--font-display) !important;
+  color: var(--accent-amber) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+}
+
+.VPNavBarTitle .title::before {
+  content: "$ ";
+  opacity: 0.6;
+}
+
+.VPNavBarMenuLink {
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px 8px !important;
+  border-radius: var(--radius-1) !important;
+}
+
+.VPNavBarMenuLink:hover,
+.VPNavBarMenuLink.active {
+  color: var(--accent-amber) !important;
+  background: var(--accent-amber-glow) !important;
+}
+
+.VPSidebar {
+  background: var(--bg-panel) !important;
+  border-right: 1px solid var(--border-dim) !important;
+  padding: var(--space-4) !important;
+}
+
+.VPSidebarItem.level-1 > .item {
+  font-family: var(--font-body) !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  border-radius: var(--radius-2) !important;
+  padding: 8px 12px !important;
+  border-left: 2px solid transparent !important;
+  transition: all var(--duration) var(--ease);
+}
+
+.VPSidebarItem.level-1 > .item:hover {
+  background: var(--bg-elevated) !important;
+  color: var(--accent-amber) !important;
+  border-left-color: var(--border-bright) !important;
+}
+
+.VPSidebarItem.level-1.is-link.active > .item {
+  background: var(--accent-amber-glow) !important;
+  color: var(--accent-amber) !important;
+  border-left-color: var(--accent-amber) !important;
+}
+
+.VPContent {
+  background: var(--bg-void) !important;
+}
+
+.VPDoc {
+  background: var(--bg-void) !important;
+}
+
+.VPDoc h1 {
+  font-family: var(--font-display) !important;
+  color: var(--text-primary) !important;
+  border-bottom: 2px solid var(--accent-amber) !important;
+  padding-bottom: var(--space-3) !important;
+  margin-bottom: var(--space-5) !important;
+  font-size: 2.2rem !important;
+}
+
+.VPDoc h1::before {
+  content: "# ";
+  color: var(--accent-amber);
+  opacity: 0.8;
+}
+
+.VPDoc h2 {
+  border-top: 1px solid var(--border-dim) !important;
+  padding-top: var(--space-4) !important;
+  margin-top: var(--space-6) !important;
+}
+
+.VPDoc h3 {
+  color: var(--accent-amber) !important;
+  border-bottom: 1px dashed var(--border-dim);
+  padding-bottom: var(--space-2);
+}
+
+.VPDoc p, .VPDoc li {
+  color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.75 !important;
+}
+
+.VPDoc a {
+  color: var(--accent-amber) !important;
+  border-bottom: 1px dashed var(--accent-amber-dim) !important;
+}
+
+.VPDoc a:hover {
+  border-bottom: 1px solid var(--accent-amber) !important;
+  text-shadow: 0 0 8px var(--accent-amber-glow);
+}
+
+.VPDoc code {
+  font-family: var(--font-code) !important;
+  background: var(--bg-elevated) !important;
+  color: var(--accent-amber) !important;
+  border: 1px solid var(--border-dim) !important;
+  padding: 2px 6px !important;
+  border-radius: var(--radius-1) !important;
+  font-size: 0.85em !important;
+}
+
+.VPDoc pre {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-left: 3px solid var(--accent-amber) !important;
+  border-radius: var(--radius-2) !important;
+  padding: var(--space-4) !important;
+  box-shadow: var(--shadow-deep) !important;
+}
+
+.VPDoc pre code {
+  background: transparent !important;
+  border: none !important;
+  color: var(--text-primary) !important;
+  font-family: var(--font-code) !important;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+}
+
+.VPDoc blockquote {
+  background: var(--bg-panel) !important;
+  border-left: 3px solid var(--accent-amber) !important;
+  color: var(--text-secondary) !important;
+  font-style: italic !important;
+  padding: var(--space-3) var(--space-4) !important;
+  margin: var(--space-4) 0 !important;
+}
+
+.VPDoc table {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: var(--radius-2) !important;
+  overflow: hidden;
+}
+
+.VPDoc th {
+  background: var(--bg-elevated) !important;
+  color: var(--accent-amber) !important;
+  font-family: var(--font-display) !important;
+  border-bottom: 2px solid var(--border-bright) !important;
+  font-size: 12px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.VPDoc td {
+  border-bottom: 1px solid var(--border-dim) !important;
+}
+
+.VPDoc tr:hover td {
+  background: var(--bg-elevated) !important;
+}
+
+.VPDoc hr {
+  background: linear-gradient(to right, transparent, var(--border-bright), transparent) !important;
+  height: 1px !important;
+  border: none !important;
+}
+
+.VPDoc ul li::marker,
+.VPDoc ol li::marker {
+  color: var(--accent-amber) !important;
+}
+
+.VPDoc strong {
+  color: var(--accent-amber) !important;
+}
+
+.VPDocAside {
+  background: transparent !important;
+}
+
+.VPDocAside a {
+  color: var(--text-secondary) !important;
+  border: none !important;
+}
+
+.VPDocAside a:hover {
+  color: var(--accent-amber) !important;
+}
+
+.VPDocFooter {
+  border-top: 1px solid var(--border-dim) !important;
+  margin-top: var(--space-6) !important;
+  padding-top: var(--space-4) !important;
+}
+
+.VPLastUpdated {
+  color: var(--text-muted) !important;
+  font-family: var(--font-code) !important;
+  font-size: 12px !important;
+}
+
+/* === 详情页 footer 增强 === */
+.vp-doc-footer {
+  border-top: 1px solid var(--border-dim);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+}
+
+.vp-doc-footer .pager {
+  background: var(--bg-panel) !important;
+  border: 1px solid var(--border-dim) !important;
+  border-radius: var(--radius-2);
+  padding: var(--space-3);
+  transition: all var(--duration) var(--ease);
+}
+
+.vp-doc-footer .pager:hover {
+  border-color: var(--accent-amber) !important;
+}
+
+/* === 详情页标签（链接） === */
+.VPDoc a.internal-link {
+  color: var(--accent-amber) !important;
+}
+
+/* === breadcrumb === */
+.VPDoc nav.breadcrumb {
+  color: var(--text-muted) !important;
+  font-family: var(--font-code) !important;
+  font-size: 12px !important;
+}
+
+.VPDoc nav.breadcrumb a {
+  color: var(--text-secondary) !important;
+  border: none !important;
+}
+
+.VPDoc nav.breadcrumb a:hover {
+  color: var(--accent-amber) !important;
+}
+
+/* === 文章内容里的"分隔符"增强 === */
+.VPDoc h2:not(:first-child) {
+  position: relative;
+}
+
+.VPDoc h2:not(:first-child)::before {
+  content: "─ ─ ─ ─ ─ ─ ─ ─";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  color: var(--accent-amber);
+  opacity: 0.3;
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: -1px;
+}
+
+/* === 卡片（自定义） === */
+.custom-card {
+  display: block;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid var(--accent-amber);
+  padding: var(--space-4);
+  margin: var(--space-3) 0;
+  text-decoration: none !important;
+  color: var(--text-primary) !important;
+  transition: all var(--duration) var(--ease);
+}
+
+.custom-card:hover {
+  border-left-color: var(--accent-amber);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-amber);
+  transform: translateX(2px);
+}
+
+.custom-card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--accent-amber);
+  margin-bottom: var(--space-2);
+}
+
+.custom-card-desc {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* === 首页 hero - 终端机启动画面 === */
+.terminal-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6) 0;
+  position: relative;
+  background: 
+    radial-gradient(ellipse at center, var(--accent-amber-glow) 0%, transparent 60%),
+    var(--bg-void);
+}
+
+.terminal-prompt {
+  font-family: var(--font-display);
+  color: var(--accent-amber);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+  opacity: 0.9;
+}
+
+.terminal-prompt::before {
+  content: "$ ";
+  color: var(--accent-amber);
+  font-weight: 700;
+}
+
+.terminal-output {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: var(--space-3) 0;
+}
+
+.terminal-output .accent {
+  color: var(--accent-amber);
+}
+
+.terminal-sub {
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: var(--space-4);
+  max-width: 600px;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.2em;
+  background: var(--accent-amber);
+  animation: blink 1s steps(2) infinite;
+  vertical-align: text-bottom;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* === 按钮（终端风） === */
+.terminal-button {
+  display: inline-block;
+  font-family: var(--font-display);
+  background: transparent;
+  color: var(--accent-amber);
+  border: 1px solid var(--accent-amber);
+  padding: 10px 20px;
+  text-decoration: none !important;
+  margin: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all var(--duration) var(--ease);
+}
+
+.terminal-button:hover {
+  background: var(--accent-amber);
+  color: var(--bg-void);
+  box-shadow: 0 0 16px var(--accent-amber-glow);
+}
+
+.terminal-button.primary {
+  background: var(--accent-amber);
+  color: var(--bg-void);
+}
+
+.terminal-button.primary:hover {
+  background: var(--accent-amber-dim);
+  color: var(--bg-void);
+}
+
+.terminal-button::before {
+  content: "→ ";
+}
+
+/* === 扫描线（CRT 效果） === */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 176, 0, 0.012) 2px,
+    rgba(255, 176, 0, 0.012) 4px
+  );
+  z-index: 10000;
+}
+
+/* === 响应式 === */
+@media (max-width: 768px) {
+  .terminal-output {
+    font-size: 1.8rem;
+  }
+  .terminal-hero {
+    min-height: 50vh;
+  }
+}
+
+/* === 自定义内容容器（供 markdown 内的 div 使用） === */
+.terminal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+}
+
+.terminal-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-4) 0;
+  padding: var(--space-4);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-2);
+}
+
+.terminal-stat {
+  text-align: left;
+  padding: var(--space-2);
+  border-left: 2px solid var(--accent-amber);
+}
+
+.terminal-stat-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.terminal-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent-amber);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.terminal-stat-suffix {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-left: 4px;
+}
+
+/* === 选中样式 === */
+::selection {
+  background: var(--accent-amber);
+  color: var(--bg-void);
+}
+
+/* === 滚动条 === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-amber);
+}
+
+/* === 暗色主题适配（VitePress 内置暗色）=== */
+.dark {
+  /* 默认就是暗色，无需特殊处理 */
+}
+
+/* === 禁用暗色切换（强制暗色 = 终端美学）=== */
+/* 如果想允许切换，删掉下面这段 */
+.VPSwitchAppearance {
+  display: none !important;
+}
+
+/* === Skill 卡片页样式 === */
+
+/* 卡片网格容器 */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+/* 单个卡片 */
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--vp-c-brand-1);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* 卡片头部 */
+.skill-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.skill-card-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.skill-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.skill-card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 8px 0;
+}
+
+.skill-card-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+}
+
+.skill-card-tag.new {
+  background: rgba(52, 211, 153, 0.15);
+  color: #10b981;
+}
+
+.skill-card-desc {
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+  margin: 8px 0 12px 0;
+  flex: 1;
+}
+
+.skill-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--vp-c-text-3);
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 8px;
+  margin-top: auto;
+}
+
+/* 分类章节 */
+.skill-section {
+  margin: 32px 0;
+}
+
+.skill-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 24px 0 12px 0;
+  color: var(--vp-c-text-1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-section-count {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  font-weight: normal;
+}
+
+
+/* === Article 卡片页样式 === */
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg-soft);
+  transition: all 0.25s ease;
+  text-decoration: none;
+  color: var(--vp-c-text-1);
+  position: relative;
+  overflow: hidden;
+}
+
+.article-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.article-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.article-card-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.article-card-date {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  font-family: var(--vp-font-family-mono);
+}
+
+.article-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.article-card-summary {
+  font-size: 14px;
+  color: var(--vp-c-text-2);
+  line-height: 1.7;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+.article-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.article-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+}
+
+.article-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.article-card-platforms {
+  display: flex;
+  gap: 4px;
+}
+
+.platform-icon {
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.platform-icon:hover {
+  opacity: 1;
 }
